@@ -37,6 +37,9 @@ The current application follows this flow:
 - `buscar.jsp`
 - `actualizador.jsp`
 
+
+<img width="1037" height="453" alt="image" src="https://github.com/user-attachments/assets/3fde5a99-361e-40f3-98cd-739e7390c838" />
+
 ---
 
 # Target State
@@ -75,35 +78,25 @@ Examples include:
 - Environment variables
 - API configuration
 - External service configurations
-
+  
 No configuration values should be hardcoded.
 
 ---
 
 ## Database Modernization
-
 Replace Oracle database with PostgreSQL.
 
-### Benefits
-
-- Reduced infrastructure costs
-- Improved flexibility
-- Better compatibility with modern ecosystems
-- Easier maintenance
 
 ---
 
 ## Modern Frontend
-
 Replace legacy JSP pages with a modern frontend application built using:
-
 - React
 - Next.js
 - Tailwind CSS
 - shadcn/ui
 
 ### Frontend Goals
-
 - Improve UI/UX
 - Create reusable components
 - Better maintainability
@@ -120,28 +113,15 @@ Implement validation in both:
 - Frontend
 - Backend
 
-This ensures:
-
-- Better data integrity
-- Better user experience
-- Reduced invalid requests
-
 ---
 
 ## API Documentation
-
 Document backend APIs using OpenAPI standards.
 
-### Benefits
-
-- API discoverability
-- Developer onboarding
-- Integration efficiency
 
 ---
 
 ## Responsive Design
-
 The application must support:
 
 - Desktop devices
@@ -153,15 +133,11 @@ This improves accessibility across multiple platforms.
 ---
 
 # DevOps / Deployment
-
 ## Easy Deployment Strategy
-
 Adopt a Docker-first deployment model.
-
+Fast setup using a single Docker Compose configuration
 All application components must be containerized.
-
 ### Containerized Components
-
 - Backend application
 - Frontend application
 - PostgreSQL database
@@ -175,21 +151,4 @@ The entire application should be deployable using a single command:
 ```bash
 docker-compose up
 ```
-
-This enables:
-
-- Faster testing
-- Easier onboarding
-- Simplified deployment
-- Faster evaluation process
-
 ---
-
-# Expected Business Value
-
-- Reduce technical debt
-- Improve scalability
-- Improve maintainability
-- Improve developer productivity
-- Modernize user experience
-- Accelerate future feature development
