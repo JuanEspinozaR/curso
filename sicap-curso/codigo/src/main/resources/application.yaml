@@ -1,0 +1,67 @@
+server:
+  servlet:
+    context-path: /api/sicap
+  port: 1223
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v1/open-api/api-docs
+  swagger-ui:
+    enabled: true
+    path: /v1/open-api/swagger/index.html
+    operations-sorter: alpha
+    display-request-duration: true
+    persist-auth: true
+  open-api:
+    title: Sistema de Capacitacion Penoles
+    description: >
+      <b>Overview:</b><br>
+      <p>La aplicacion <b><u>Sistema de Capacitacion Penoles</u></b> administra los elementos y recursos de las aplicaciones, permisos y roles de acceso.</p>
+      <br><b>Prerequisitos:</b><br>
+      <ul>
+        <li>Contar con rol de usuario o administrador en el sistema PAS.</li>
+        <li>
+          Token de acceso proporcionado por el servicio de autenticacion
+          <a href='${penoles.security.provider.host_url}/v1/api/auth/open-api/swagger/swagger-ui/index.html#/Servicios%20de%20Autenticacion/login' target='_blank'>
+            Ir al servicio de autenticacion
+          </a>
+        </li>
+      </ul>
+      <b>Tecnologias utilizadas:</b><br>
+      <p>
+        Aplicacion desarrollada con Spring Boot 3.2.3, JDK 17, Keycloak y Oracle Database.
+      </p><br>
+      <b><center>Propiedad de Servicios Administrativos Penoles - Uso conforme a las instrucciones de la compania</center></b>
+    version: 1.0
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.splata.penoles.mx:8443/realms/Penoles
+  application:
+    name: sicap-backend
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//spaawebtbd01.siteplata.penoles:50140/BDESA19C
+    username: sicap
+    password: S1cAp_19c
+jwt:
+  auth:
+    converter:
+      resource-id: sicap
+      principle-attribute: preferred_username
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: TRACE
+penoles:
+  security:
+    provider:
+      host_url: https://pas.oke-mty-tst.splata.penoles.mx

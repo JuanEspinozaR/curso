@@ -1,0 +1,112 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: { DEPLOYNAME }
+  namespace: { NAMESPACE }
+spec:
+  template:
+    metadata:
+      name: { DEPLOYNAME }
+      labels:
+        app: { DEPLOYNAME }
+        tier: backend
+    spec:
+      hostNetwork: false
+      imagePullSecrets:
+        - name: ocirsecret
+      containers:
+        - name: { DEPLOYNAME }
+          image: { DOCKER_IMAGE_URI }
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 1223
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
+          env:
+            - name: DB-URL
+              valueFrom:
+                secretKeyRef:
+                  name: sicap-backend
+                  key: SICAP-DB-URL
+            - name: DB-USER
+              valueFrom:
+                secretKeyRef:
+                  name: sicap-backend
+                  key: SICAP-DB-USER
+            - name: DB-PWD
+              valueFrom:
+                secretKeyRef:
+                  name: sicap-backend
+                  key: SICAP-DB-PASSWORD
+            - name: KEYCLOAK-LOGIN-URL
+              valueFrom:
+                secretKeyRef:
+                  name: -backend
+                  key: PAS-URL
+            - name: PAS-URL
+              valueFrom:
+                secretKeyRef:
+                  name: pas-backend
+                  key: PAS-URL
+            - name: PAS-OAUTH-ISSUER-URI
+              valueFrom:
+                secretKeyRef:
+                  name: pas-keycloak
+                  key: PAS-OAUTH-ISSUER-URI
+            - name: BACK-URL
+              valueFrom:
+                secretKeyRef:
+                  name: pas-backend
+                  key: BACK-URL
+  replicas: 1
+  selector:
+    matchLabels:
+      app: { DEPLOYNAME }
+      tier: backend
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-{DEPLOYNAME}
+  namespace: { NAMESPACE }
+
+spec:
+  type: ClusterIP
+  ports:
+    - port: 1223
+      targetPort: 1223
+      name: http
+  selector:
+    app: { DEPLOYNAME }
+    tier: backend
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ing-{DEPLOYNAME}
+  namespace: { NAMESPACE }
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.org/proxy-read-timeout: 360s
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "360"
+    nginx.ingress.kubernetes.io/cors-allow-origin: https://swagger.oke-phx-dev.splata.penoles.mx
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: sicap-back.oke-phx-tst.splata.penoles.mx
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: svc-{DEPLOYNAME}
+                port:
+                  number: 1223

@@ -1,0 +1,12 @@
+default:
+    tags:
+        - frameworktst
+variables:
+    PROYECTO_NOMBRE: 'sicap-backend'
+    SAST_DISABLED: 'true'
+    CI_REGISTRY: 'sicap-backend'
+include:
+ - project: 'DESA-INT/DEVDOCS'
+   ref: 'dockerfile_path'
+   file: 'workflows/springboot/wf-ms-backend.yaml'
+   #file: 'pipeline_template_upload_docker_image.yml'

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://desweb01.splata.penoles.mx/reubal/services/ReunionService?wsdl" uri="src/conf/xml-resources/web-service-references/ReunionService/wsdl/desweb01.splata.penoles.mx/reubal/services/ReunionService.wsdl"/>
+    <system systemId="http://desweb01.splata.penoles.mx:80/reubal/services/ReunionService?xsd=1" uri="src/conf/xml-resources/web-service-references/ReunionService/wsdl/desweb01.splata.penoles.mx_80/reubal/services/ReunionService.xsd_1.xsd"/>
+</catalog>

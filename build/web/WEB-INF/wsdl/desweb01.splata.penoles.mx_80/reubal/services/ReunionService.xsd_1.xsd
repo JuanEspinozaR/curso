@@ -1,0 +1,1123 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://service.reunion.bsc.penoles/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.reunion.bsc.penoles/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="activateReunion" type="tns:activateReunion"/>
+
+<xs:element name="activateReunionResponse" type="tns:activateReunionResponse"/>
+
+<xs:element name="agendaNuevaReunion" type="tns:agendaNuevaReunion"/>
+
+<xs:element name="agendaNuevaReunionResponse" type="tns:agendaNuevaReunionResponse"/>
+
+<xs:element name="deletePendienteRow" type="tns:deletePendienteRow"/>
+
+<xs:element name="deletePendienteRowResponse" type="tns:deletePendienteRowResponse"/>
+
+<xs:element name="fillAsuntoRow" type="tns:fillAsuntoRow"/>
+
+<xs:element name="fillAsuntoRowResponse" type="tns:fillAsuntoRowResponse"/>
+
+<xs:element name="fillPendienteRow" type="tns:fillPendienteRow"/>
+
+<xs:element name="fillPendienteRowResponse" type="tns:fillPendienteRowResponse"/>
+
+<xs:element name="finalizaAsunto" type="tns:finalizaAsunto"/>
+
+<xs:element name="finalizaAsuntoResponse" type="tns:finalizaAsuntoResponse"/>
+
+<xs:element name="getAsistenteReunionGrid" type="tns:getAsistenteReunionGrid"/>
+
+<xs:element name="getAsistenteReunionGridResponse" type="tns:getAsistenteReunionGridResponse"/>
+
+<xs:element name="getAsuntoReunionGrid" type="tns:getAsuntoReunionGrid"/>
+
+<xs:element name="getAsuntoReunionGridResponse" type="tns:getAsuntoReunionGridResponse"/>
+
+<xs:element name="getEntidadesHijasList" type="tns:getEntidadesHijasList"/>
+
+<xs:element name="getEntidadesHijasListResponse" type="tns:getEntidadesHijasListResponse"/>
+
+<xs:element name="getEntidadesList" type="tns:getEntidadesList"/>
+
+<xs:element name="getEntidadesListResponse" type="tns:getEntidadesListResponse"/>
+
+<xs:element name="getEntidadesPadreList" type="tns:getEntidadesPadreList"/>
+
+<xs:element name="getEntidadesPadreListResponse" type="tns:getEntidadesPadreListResponse"/>
+
+<xs:element name="getGridColumns" type="tns:getGridColumns"/>
+
+<xs:element name="getGridColumnsResponse" type="tns:getGridColumnsResponse"/>
+
+<xs:element name="getMultivaluadaRows" type="tns:getMultivaluadaRows"/>
+
+<xs:element name="getMultivaluadaRowsResponse" type="tns:getMultivaluadaRowsResponse"/>
+
+<xs:element name="getPendienteAsuntoGrid" type="tns:getPendienteAsuntoGrid"/>
+
+<xs:element name="getPendienteAsuntoGridResponse" type="tns:getPendienteAsuntoGridResponse"/>
+
+<xs:element name="getPendienteEstadisticaGrid" type="tns:getPendienteEstadisticaGrid"/>
+
+<xs:element name="getPendienteEstadisticaGridResponse" type="tns:getPendienteEstadisticaGridResponse"/>
+
+<xs:element name="getProyectoAsuntoGrid" type="tns:getProyectoAsuntoGrid"/>
+
+<xs:element name="getProyectoAsuntoGridResponse" type="tns:getProyectoAsuntoGridResponse"/>
+
+<xs:element name="getRelevanteAsuntoGrid" type="tns:getRelevanteAsuntoGrid"/>
+
+<xs:element name="getRelevanteAsuntoGridResponse" type="tns:getRelevanteAsuntoGridResponse"/>
+
+<xs:element name="getReunionesGrid" type="tns:getReunionesGrid"/>
+
+<xs:element name="getReunionesGridResponse" type="tns:getReunionesGridResponse"/>
+
+<xs:element name="getUsuario" type="tns:getUsuario"/>
+
+<xs:element name="getUsuarioResponse" type="tns:getUsuarioResponse"/>
+
+<xs:element name="getUsuarios" type="tns:getUsuarios"/>
+
+<xs:element name="getUsuariosResponse" type="tns:getUsuariosResponse"/>
+
+<xs:element name="insertAsuntoRow" type="tns:insertAsuntoRow"/>
+
+<xs:element name="insertAsuntoRowResponse" type="tns:insertAsuntoRowResponse"/>
+
+<xs:element name="insertPendienteRow" type="tns:insertPendienteRow"/>
+
+<xs:element name="insertPendienteRowResponse" type="tns:insertPendienteRowResponse"/>
+
+<xs:element name="insertarComentario" type="tns:insertarComentario"/>
+
+<xs:element name="insertarComentarioResponse" type="tns:insertarComentarioResponse"/>
+
+<xs:element name="pingReunion" type="tns:pingReunion"/>
+
+<xs:element name="pingReunionResponse" type="tns:pingReunionResponse"/>
+
+<xs:element name="saveListaAsistentes" type="tns:saveListaAsistentes"/>
+
+<xs:element name="saveListaAsistentesResponse" type="tns:saveListaAsistentesResponse"/>
+
+<xs:element name="updatePendienteRow" type="tns:updatePendienteRow"/>
+
+<xs:element name="updatePendienteRowResponse" type="tns:updatePendienteRowResponse"/>
+
+<xs:element name="verificaResponsableUsuario" type="tns:verificaResponsableUsuario"/>
+
+<xs:element name="verificaResponsableUsuarioResponse" type="tns:verificaResponsableUsuarioResponse"/>
+
+<xs:complexType name="insertAsuntoRow">
+<xs:sequence>
+<xs:element name="asuntoRow" type="tns:asuntoRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asuntoRow">
+<xs:sequence>
+<xs:element name="pendienteList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="pendienteList" type="tns:pendienteRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="asi_id_expositor" type="xs:short" minOccurs="0"/>
+<xs:element name="asu_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_duracion" type="xs:short" minOccurs="0"/>
+<xs:element name="asu_duracion_real" type="xs:short" minOccurs="0"/>
+<xs:element name="asu_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="asu_fec_fin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="asu_fec_inicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="asu_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="asu_id" type="xs:short" minOccurs="0"/>
+<xs:element name="asu_id_key" type="xs:short" minOccurs="0"/>
+<xs:element name="asu_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_notas" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_orden" type="xs:short" minOccurs="0"/>
+<xs:element name="asu_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="asu_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="asu_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="documentoList" type="tns:documentoRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_id_padre" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="entidadAsunto" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="expositor" type="tns:asistenteRow" minOccurs="0"/>
+<xs:element name="indicadorDesviacionList" type="tns:indicadorDesviacionRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="pen_id" type="xs:int" minOccurs="0"/>
+<xs:element name="pendiente" type="tns:pendienteRow" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+<xs:element name="reunion" type="tns:reunionRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pendienteRow">
+<xs:sequence>
+<xs:element name="responsableList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="responsableList" type="tns:responsableRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="seguimientoList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="seguimientoList" type="tns:seguimientoRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="documentosList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="documentosList" type="tns:documentoRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="adjuntoCount" type="xs:int" minOccurs="0"/>
+<xs:element name="asu_id" type="xs:short" minOccurs="0"/>
+<xs:element name="asunto" type="tns:asuntoRow" minOccurs="0"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="entidad" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="ind_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_avance" type="xs:decimal" minOccurs="0"/>
+<xs:element name="pen_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_clave_aux" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_comentario" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_entregable" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="pen_fec_fin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="pen_fec_inicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="pen_fec_objetivo" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="pen_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="pen_id" type="xs:int" minOccurs="0"/>
+<xs:element name="pen_id_key" type="xs:int" minOccurs="0"/>
+<xs:element name="pen_id_mes" type="xs:int" minOccurs="0"/>
+<xs:element name="pen_id_proyecto" type="xs:int" minOccurs="0"/>
+<xs:element name="pen_objetivo" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_salud" type="tns:pendienteHealth" minOccurs="0"/>
+<xs:element name="pen_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="pen_status_old" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="pen_tip_entregable" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="pen_tip_pendiente" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="pen_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="pen_url_administracion" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_url_seguimiento" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="proyecto" type="tns:proyectoRow" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+<xs:element name="reunion" type="tns:reunionRow" minOccurs="0"/>
+<xs:element name="rol_responsable" type="tns:multivaluadaRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="responsableRow">
+<xs:sequence>
+<xs:element name="administrador" type="xs:boolean" minOccurs="0"/>
+<xs:element name="autorizacionHecha" type="xs:boolean"/>
+<xs:element name="listaPendientesAdministrador" type="tns:pendienteRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="listaPendientesAutorizador" type="tns:pendienteRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="listaPendientesResponsable" type="tns:pendienteRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="listaPendientesRevisor" type="tns:pendienteRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="pen_id" type="xs:int" minOccurs="0"/>
+<xs:element name="res_correo" type="xs:string" minOccurs="0"/>
+<xs:element name="res_id" type="xs:short" minOccurs="0"/>
+<xs:element name="res_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="res_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="res_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="res_tipo_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_cve" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="tns:usuarioRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="multivaluadaRow">
+<xs:sequence/>
+<xs:attribute name="etaCve" type="xs:string"/>
+<xs:attribute name="etaDesc" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="usuarioRow">
+<xs:sequence>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="entidadUsuario" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="niv_id" type="xs:short" minOccurs="0"/>
+<xs:element name="primaryKey" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_correo" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_cve" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="usu_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="usu_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_usu_reg" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="entidadRow">
+<xs:sequence>
+<xs:element name="agendadorRows" type="tns:entidadResponsableRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="coordinadorRows" type="tns:entidadResponsableRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="copiaOcultaRows" type="tns:entidadResponsableRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="ent_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ent_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_id_padre" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_nombre_corto" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_path" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_status" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="entidadList" type="tns:entidadRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="entidadPadre" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="niv_id" type="xs:short" minOccurs="0"/>
+<xs:element name="niv_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="nivel" type="tns:nivelRow" minOccurs="0"/>
+<xs:element name="responsableRows" type="tns:entidadResponsableRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="seguimientoPendienteRows" type="tns:entidadResponsableRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="usu_cve" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="entidadResponsableRow">
+<xs:sequence>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="entidad" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="ere_correo" type="xs:string" minOccurs="0"/>
+<xs:element name="ere_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ere_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ere_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="ere_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ere_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="ere_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="ere_usu_responsable" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nivelRow">
+<xs:sequence>
+<xs:element name="niv_id" type="xs:short" minOccurs="0"/>
+<xs:element name="niv_id_padre" type="xs:short" minOccurs="0"/>
+<xs:element name="niv_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="nivelPadre" type="tns:nivelRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="seguimientoRow">
+<xs:sequence>
+<xs:element name="documentoList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="documentoList" type="tns:documentoRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="pen_id" type="xs:int" minOccurs="0"/>
+<xs:element name="pendiente" type="tns:pendienteRow" minOccurs="0"/>
+<xs:element name="seg_avance" type="xs:decimal" minOccurs="0"/>
+<xs:element name="seg_comentario" type="xs:string" minOccurs="0"/>
+<xs:element name="seg_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="seg_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="seg_fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="seg_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="seg_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="seg_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="usu_cve" type="tns:usuarioRow" minOccurs="0"/>
+<xs:element name="usuario" type="tns:usuarioRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="documentoRow">
+<xs:sequence>
+<xs:element name="doc_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="doc_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="doc_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="doc_id" type="xs:int" minOccurs="0"/>
+<xs:element name="doc_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="doc_url_descarga" type="xs:string" minOccurs="0"/>
+<xs:element name="doc_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="doc_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="doc_version" type="xs:byte" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proyectoRow">
+<xs:complexContent>
+<xs:extension base="tns:pendienteRow">
+<xs:sequence>
+<xs:element name="est_id" type="xs:int" minOccurs="0"/>
+<xs:element name="estrategia" type="tns:estrategiaRow" minOccurs="0"/>
+<xs:element name="proyectoIndicadorList" type="tns:proyectoIndicadorRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="pry_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="pry_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="estrategiaRow">
+<xs:sequence>
+<xs:element name="est_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="est_id" type="xs:int" minOccurs="0"/>
+<xs:element name="est_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="est_objetivo" type="xs:string" minOccurs="0"/>
+<xs:element name="est_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="est_usu_cve" type="xs:string" minOccurs="0"/>
+<xs:element name="indicadorList" type="tns:estrategiaIndicadorRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="per_id" type="xs:short" minOccurs="0"/>
+<xs:element name="perspectiva" type="tns:perspectivaRow" minOccurs="0"/>
+<xs:element name="perspectivaRow" type="tns:perspectivaRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estrategiaIndicadorRow">
+<xs:sequence>
+<xs:element name="est_id" type="xs:int" minOccurs="0"/>
+<xs:element name="estrategia" type="tns:estrategiaRow" minOccurs="0"/>
+<xs:element name="ind_id" type="xs:int" minOccurs="0"/>
+<xs:element name="indicador" type="tns:indicadorRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="indicadorRow">
+<xs:sequence>
+<xs:element name="bun_id" type="xs:int" minOccurs="0"/>
+<xs:element name="businessUnit" type="tns:businessUnitRow" minOccurs="0"/>
+<xs:element name="div_id" type="xs:int" minOccurs="0"/>
+<xs:element name="est_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ind_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_consolida" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ind_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ind_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ind_formula" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_formula_cal" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_formula_var" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_frecuencia" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ind_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ind_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_signo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ind_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ind_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ind_tipo_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="ind_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="measure_id" type="xs:int" minOccurs="0"/>
+<xs:element name="perf_area_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ran_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ran_sentido" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="rango" type="tns:rangoRow" minOccurs="0"/>
+<xs:element name="ume_id" type="xs:short" minOccurs="0"/>
+<xs:element name="unidadMedidaRow" type="tns:unidadMedidaRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="businessUnitRow">
+<xs:sequence>
+<xs:element name="bun_description" type="xs:string" minOccurs="0"/>
+<xs:element name="bun_id" type="xs:int" minOccurs="0"/>
+<xs:element name="bun_name" type="xs:string" minOccurs="0"/>
+<xs:element name="div_description" type="xs:string" minOccurs="0"/>
+<xs:element name="div_id" type="xs:int" minOccurs="0"/>
+<xs:element name="div_name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangoRow">
+<xs:sequence>
+<xs:element name="ran_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ran_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="ran_sentido" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="secuenciaList" type="tns:rangoSecuenciaRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rangoSecuenciaRow">
+<xs:sequence>
+<xs:element name="ran_id" type="xs:int" minOccurs="0"/>
+<xs:element name="rse_calificacion" type="xs:decimal" minOccurs="0"/>
+<xs:element name="rse_color" type="xs:int" minOccurs="0"/>
+<xs:element name="rse_color_string" type="xs:string" minOccurs="0"/>
+<xs:element name="rse_operador" type="xs:string" minOccurs="0"/>
+<xs:element name="rse_secuencia" type="xs:short" minOccurs="0"/>
+<xs:element name="rse_valor" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="unidadMedidaRow">
+<xs:sequence>
+<xs:element name="fam_id" type="xs:int" minOccurs="0"/>
+<xs:element name="familia" type="xs:anyType" minOccurs="0"/>
+<xs:element name="ume_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="ume_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ume_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ume_id" type="xs:short" minOccurs="0"/>
+<xs:element name="ume_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="ume_simbolo" type="xs:string" minOccurs="0"/>
+<xs:element name="ume_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="ume_usu_reg" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="perspectivaRow">
+<xs:sequence>
+<xs:element name="per_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="per_color" type="xs:int" minOccurs="0"/>
+<xs:element name="per_color_string" type="xs:string" minOccurs="0"/>
+<xs:element name="per_color_texto" type="xs:int" minOccurs="0"/>
+<xs:element name="per_color_texto_string" type="xs:string" minOccurs="0"/>
+<xs:element name="per_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="per_id" type="xs:short" minOccurs="0"/>
+<xs:element name="per_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="per_status" type="xs:unsignedShort" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proyectoIndicadorRow">
+<xs:sequence>
+<xs:element name="ind_id" type="xs:int" minOccurs="0"/>
+<xs:element name="indicador" type="tns:indicadorRow" minOccurs="0"/>
+<xs:element name="pen_id" type="xs:int" minOccurs="0"/>
+<xs:element name="proyecto" type="tns:proyectoRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reunionRow">
+<xs:sequence>
+<xs:element name="asistenteList" type="tns:asistenteRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="asuntoList" type="tns:asuntoRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="contextPath" type="xs:string" minOccurs="0"/>
+<xs:element name="documentoList" type="tns:documentoRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="ent_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="entidadRow" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="realContextPath" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_aviso_cambios" type="xs:boolean"/>
+<xs:element name="reu_comentario" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_comentario_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_duracion" type="xs:int" minOccurs="0"/>
+<xs:element name="reu_duracion_min" type="xs:int" minOccurs="0"/>
+<xs:element name="reu_duracion_min_real" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_fec_act" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_fec_fin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_fec_inicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_fec_pendientes" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_fec_reg" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_fecha_fin_estimada" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+<xs:element name="reu_id_anterior" type="xs:int" minOccurs="0"/>
+<xs:element name="reu_id_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_pen_activados" type="xs:boolean"/>
+<xs:element name="reu_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="reu_status_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_tip_cambio" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="reu_tipo_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_ubicacion" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_usu_act" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_usu_reg" type="xs:string" minOccurs="0"/>
+<xs:element name="reunionAnteriorRow" type="tns:reunionRow" minOccurs="0"/>
+<xs:element name="serverName" type="xs:string" minOccurs="0"/>
+<xs:element name="serverPort" type="xs:int" minOccurs="0"/>
+<xs:element name="usu_cve" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asistenteRow">
+<xs:sequence>
+<xs:element name="asi_correo" type="xs:string" minOccurs="0"/>
+<xs:element name="asi_fec_notifica" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="asi_id" type="xs:short" minOccurs="0"/>
+<xs:element name="asi_id_padre" type="xs:short" minOccurs="0"/>
+<xs:element name="asi_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="asi_razon" type="xs:string" minOccurs="0"/>
+<xs:element name="asi_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="asi_tip_ausencia" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="asi_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="key" type="xs:string" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+<xs:element name="usu_cve" type="xs:string" minOccurs="0"/>
+<xs:element name="_asi_status_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="_asi_tipo_desc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="indicadorDesviacionRow">
+<xs:complexContent>
+<xs:extension base="tns:indicadorRow">
+<xs:sequence>
+<xs:element name="indicadorEntidadList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="indicadorEntidadList" type="tns:indicadorDesviacionEntidadRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="accionList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="accionList" type="tns:indicadorDesviacionAccionRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="asu_id" type="xs:short" minOccurs="0"/>
+<xs:element name="asunto" type="tns:asuntoRow" minOccurs="0"/>
+<xs:element name="entidades" type="xs:string" minOccurs="0"/>
+<xs:element name="ide_causa" type="xs:string" minOccurs="0"/>
+<xs:element name="ide_orden" type="xs:int" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="indicadorDesviacionEntidadRow">
+<xs:sequence>
+<xs:element name="asu_id" type="xs:short" minOccurs="0"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="entidad" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="ind_id" type="xs:int" minOccurs="0"/>
+<xs:element name="indicadorDesviacionRow" type="tns:indicadorDesviacionRow" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="indicadorDesviacionAccionRow">
+<xs:sequence>
+<xs:element name="asu_id" type="xs:short" minOccurs="0"/>
+<xs:element name="ida_descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="ida_fec_compromiso" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ida_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ida_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="ida_status" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="ind_id" type="xs:int" minOccurs="0"/>
+<xs:element name="indicadorDesviacionRow" type="tns:indicadorDesviacionRow" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertAsuntoRowResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProyectoAsuntoGrid">
+<xs:sequence>
+<xs:element name="asuntoRow" type="tns:asuntoRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProyectoAsuntoGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:proyectoServiceRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proyectoServiceRow">
+<xs:complexContent>
+<xs:extension base="tns:proyectoRow">
+<xs:sequence>
+<xs:element name="proyectoList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="proyectoList" type="tns:proyectoRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ent_id_Padre" type="xs:int" minOccurs="0"/>
+<xs:element name="est_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_avance_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_status_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_tipo_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="pry_tipo_desc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="activateReunion">
+<xs:sequence>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="activateReunionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRelevanteAsuntoGrid">
+<xs:sequence>
+<xs:element name="asuntoRow" type="tns:asuntoRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRelevanteAsuntoGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:relevanteServiceRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="relevanteServiceRow">
+<xs:complexContent>
+<xs:extension base="tns:relevanteRow">
+<xs:sequence>
+<xs:element name="relevanteList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="relevanteList" type="tns:relevanteServiceRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="relevanteRow">
+<xs:sequence>
+<xs:element name="asu_id" type="xs:short" minOccurs="0"/>
+<xs:element name="asunto" type="tns:asuntoRow" minOccurs="0"/>
+<xs:element name="documentoList" type="tns:documentoRow" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="entidadRelevante" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="rel_id" type="xs:int" minOccurs="0"/>
+<xs:element name="rel_id_key" type="xs:int" minOccurs="0"/>
+<xs:element name="rel_nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="rel_orden" type="xs:short" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+<xs:element name="reunion" type="tns:reunionRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fillPendienteRow">
+<xs:sequence>
+<xs:element name="pendienteRow" type="tns:pendienteRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fillPendienteRowResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pendienteServiceRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pendienteServiceRow">
+<xs:complexContent>
+<xs:extension base="tns:pendienteRow">
+<xs:sequence>
+<xs:element name="pendienteList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="pendienteList" type="tns:pendienteServiceRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ent_id_Padre" type="xs:int" minOccurs="0"/>
+<xs:element name="pen_avance_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_salud_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_status_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_tipo_desc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="getEntidadesHijasList">
+<xs:sequence>
+<xs:element name="ent_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEntidadesHijasListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:entidadRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMultivaluadaRows">
+<xs:sequence>
+<xs:element name="lta_nom_tabla" type="xs:string" minOccurs="0"/>
+<xs:element name="lta_nom_campo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMultivaluadaRowsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:multivaluadaRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAsistenteReunionGrid">
+<xs:sequence>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAsistenteReunionGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:asistenteRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuario">
+<xs:sequence>
+<xs:element name="usuarioRow" type="tns:usuarioRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuarioRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarComentario">
+<xs:sequence>
+<xs:element name="comentario" type="xs:string" minOccurs="0"/>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarComentarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePendienteRow">
+<xs:sequence>
+<xs:element name="pendienteRow" type="tns:pendienteRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePendienteRowResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPendienteAsuntoGrid">
+<xs:sequence>
+<xs:element name="asuntoRow" type="tns:asuntoRow" minOccurs="0"/>
+<xs:element name="pendienteRow" type="tns:pendienteRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPendienteAsuntoGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pendienteServiceRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getGridColumns">
+<xs:sequence>
+<xs:element name="objectType" type="xs:string" minOccurs="0"/>
+<xs:element name="viewType" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getGridColumnsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:columna" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="columna">
+<xs:sequence>
+<xs:element name="columnImageRender" type="tns:tipoImagen" minOccurs="0"/>
+<xs:element name="columnType" type="tns:tipoColumna" minOccurs="0"/>
+<xs:element name="dataField" type="xs:string" minOccurs="0"/>
+<xs:element name="headerText" type="xs:string" minOccurs="0"/>
+<xs:element name="imageRender" type="tns:tipoImagen" minOccurs="0"/>
+<xs:element name="tipoColumna" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoImagen" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoImagenColumna" type="xs:string" minOccurs="0"/>
+<xs:element name="visible" type="xs:boolean"/>
+<xs:element name="width" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAsuntoReunionGrid">
+<xs:sequence>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAsuntoReunionGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:asuntoServiceRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asuntoServiceRow">
+<xs:complexContent>
+<xs:extension base="tns:asuntoRow">
+<xs:sequence>
+<xs:element name="asuntoList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="asuntoList" type="tns:asuntoRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="asu_duracion_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_duracion_real_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_status_desc" type="xs:string" minOccurs="0"/>
+<xs:element name="asu_tipo_desc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="pingReunion">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="pingReunionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEntidadesList">
+<xs:sequence>
+<xs:element name="niv_id" type="xs:short"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEntidadesListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:entidadRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletePendienteRow">
+<xs:sequence>
+<xs:element name="pendienteRow" type="tns:pendienteRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletePendienteRowResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="finalizaAsunto">
+<xs:sequence>
+<xs:element name="asuntoRow" type="tns:asuntoRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="finalizaAsuntoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fillAsuntoRow">
+<xs:sequence>
+<xs:element name="asuntoRow" type="tns:asuntoRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fillAsuntoRowResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:asuntoServiceRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPendienteEstadisticaGrid">
+<xs:sequence>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="pendienteEstadisticaRow" type="tns:pendienteEstadisticaRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pendienteEstadisticaRow">
+<xs:sequence>
+<xs:element name="ent_id" type="xs:int" minOccurs="0"/>
+<xs:element name="ent_path" type="xs:string" minOccurs="0"/>
+<xs:element name="entidad" type="tns:entidadRow" minOccurs="0"/>
+<xs:element name="fecha_fin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fecha_inicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="pen_clave" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_estatus" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="pen_tip_pendiente" type="xs:string" minOccurs="0"/>
+<xs:element name="pen_tipo" type="tns:multivaluadaRow" minOccurs="0"/>
+<xs:element name="reu_id" type="xs:int" minOccurs="0"/>
+<xs:element name="reunion" type="tns:reunionRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPendienteEstadisticaGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pendienteGridRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pendienteGridRow">
+<xs:sequence>
+<xs:element name="pendienteList">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="pendienteList" type="tns:pendienteGridRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="pen_salud" type="tns:pendienteHealth" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="entNombre" type="xs:string"/>
+<xs:attribute name="penAvanceDesc" type="xs:string"/>
+<xs:attribute name="penClave" type="xs:string"/>
+<xs:attribute name="penDescripcion" type="xs:string"/>
+<xs:attribute name="penFecObjetivo" type="xs:dateTime"/>
+<xs:attribute name="penId" type="xs:int"/>
+<xs:attribute name="penSeguimiento" type="xs:string"/>
+<xs:attribute name="penStatusDesc" type="xs:string"/>
+<xs:attribute name="responsables" type="xs:string"/>
+<xs:attribute name="segFecha" type="xs:dateTime"/>
+</xs:complexType>
+
+<xs:complexType name="saveListaAsistentes">
+<xs:sequence>
+<xs:element name="asistenteList" type="tns:asistenteRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saveListaAsistentesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verificaResponsableUsuario">
+<xs:sequence>
+<xs:element name="responsable" type="tns:responsableRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verificaResponsableUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getReunionesGrid">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getReunionesGridResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:reunionRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agendaNuevaReunion">
+<xs:sequence>
+<xs:element name="reunionRow" type="tns:reunionRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agendaNuevaReunionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuarios">
+<xs:sequence>
+<xs:element name="usuarioRow" type="tns:usuarioRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuarioRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEntidadesPadreList">
+<xs:sequence>
+<xs:element name="ent_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEntidadesPadreListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:entidadRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertPendienteRow">
+<xs:sequence>
+<xs:element name="pendienteRow" type="tns:pendienteRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertPendienteRowResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="pendienteHealth">
+<xs:restriction base="xs:string">
+<xs:enumeration value="UNKNOWN"/>
+<xs:enumeration value="ON_TIME"/>
+<xs:enumeration value="EXPIRED"/>
+<xs:enumeration value="WARNING"/>
+<xs:enumeration value="DANGER"/>
+<xs:enumeration value="BLANK"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoImagen">
+<xs:restriction base="xs:string">
+<xs:enumeration value="INSERTAR"/>
+<xs:enumeration value="ELIMINAR"/>
+<xs:enumeration value="MODIFICAR"/>
+<xs:enumeration value="VER_DETALLES"/>
+<xs:enumeration value="VER_RESPONSABLES"/>
+<xs:enumeration value="DOCUMENTO"/>
+<xs:enumeration value="DESCARGAR"/>
+<xs:enumeration value="CHECKBOX"/>
+<xs:enumeration value="SEMAFORO"/>
+<xs:enumeration value="EXCEL"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoColumna">
+<xs:restriction base="xs:string">
+<xs:enumeration value="TEXTO"/>
+<xs:enumeration value="NUMERO"/>
+<xs:enumeration value="MONEDA"/>
+<xs:enumeration value="FECHA"/>
+<xs:enumeration value="PORCENTAJE"/>
+<xs:enumeration value="IMAGEN"/>
+<xs:enumeration value="IMAGEN_COLUMNA"/>
+<xs:enumeration value="CHECKBOX"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
